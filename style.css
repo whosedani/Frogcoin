@@ -707,16 +707,15 @@ a { color: inherit; text-decoration: none; }
 }
 
 .proof-grid {
-  column-count: 2;
-  column-gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
   max-width: 960px;
   width: 100%;
   margin-top: 8px;
 }
 
 .proof-item {
-  break-inside: avoid;
-  margin-bottom: 16px;
   border-radius: 8px;
   border: 1px solid var(--neon-08);
   background: rgba(57,255,20,0.02);
@@ -929,10 +928,6 @@ a { color: inherit; text-decoration: none; }
 
 /* Desktop */
 @media (min-width: 1024px) {
-  .proof-grid {
-    column-count: 3;
-  }
-
   .pond-steps {
     max-width: 600px;
   }
@@ -950,6 +945,10 @@ a { color: inherit; text-decoration: none; }
 
 /* Mobile — small tweaks */
 @media (max-width: 480px) {
+  .proof-grid {
+    grid-template-columns: 1fr;
+  }
+
   .lily-nav {
     bottom: 16px;
     left: 50%;
