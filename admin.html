@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FROGECOIN — Admin</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0a0f0a;
+      color: #c8d8c8;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .admin-card {
+      background: #111a11;
+      border: 1px solid rgba(57,255,20,0.1);
+      border-radius: 12px;
+      padding: 32px;
+      width: 100%;
+      max-width: 480px;
+    }
+    h1 {
+      font-size: 18px;
+      color: #39FF14;
+      margin-bottom: 24px;
+      letter-spacing: 2px;
+    }
+    label {
+      display: block;
+      font-size: 12px;
+      color: #6a8a6a;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    input {
+      width: 100%;
+      padding: 10px 14px;
+      background: #0a120a;
+      border: 1px solid rgba(57,255,20,0.15);
+      border-radius: 6px;
+      color: #e4f5d4;
+      font-size: 14px;
+      font-family: monospace;
+      margin-bottom: 16px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus {
+      border-color: rgba(57,255,20,0.4);
+    }
+    input[type="password"] {
+      font-family: system-ui, sans-serif;
+    }
+    .divider {
+      height: 1px;
+      background: rgba(57,255,20,0.08);
+      margin: 20px 0;
+    }
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background: rgba(57,255,20,0.1);
+      border: 1px solid rgba(57,255,20,0.3);
+      border-radius: 6px;
+      color: #39FF14;
+      font-size: 14px;
+      cursor: pointer;
+      letter-spacing: 1px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    button[type="submit"]:hover {
+      background: rgba(57,255,20,0.18);
+      border-color: #39FF14;
+    }
+    button[type="submit"]:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .status {
+      margin-top: 16px;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      display: none;
+    }
+    .status.success {
+      display: block;
+      background: rgba(57,255,20,0.08);
+      border: 1px solid rgba(57,255,20,0.2);
+      color: #39FF14;
+    }
+    .status.error {
+      display: block;
+      background: rgba(255,50,50,0.08);
+      border: 1px solid rgba(255,50,50,0.2);
+      color: #ff6b6b;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-card">
+    <h1>FROGECOIN ADMIN</h1>
+    <form id="admin-form">
+      <label for="ca">Contract Address (CA)</label>
+      <input type="text" id="ca" name="ca" placeholder="Loading...">
+
+      <label for="twitter">Twitter URL</label>
+      <input type="url" id="twitter" name="twitter" placeholder="https://twitter.com/...">
+
+      <label for="community">Community URL</label>
+      <input type="url" id="community" name="community" placeholder="https://t.me/...">
+
+      <label for="buy">Buy URL</label>
+      <input type="url" id="buy" name="buy" placeholder="https://pump.fun/...">
+
+      <div class="divider"></div>
+
+      <label for="password">Admin Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter password" required>
+
+      <button type="submit" id="submit-btn">Save Config</button>
+      <div class="status" id="status"></div>
+    </form>
+  </div>
+
+  <script>
+    (function () {
+      var form = document.getElementById('admin-form');
+      var status = document.getElementById('status');
+      var submitBtn = document.getElementById('submit-btn');
+
+      // Load current config
+      fetch('/api/config')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          document.getElementById('ca').value = data.ca || '';
+          document.getElementById('twitter').value = data.twitter || '';
+          document.getElementById('community').value = data.community || '';
+          document.getElementById('buy').value = data.buy || '';
+        })
+        .catch(function () {
+          showStatus('Could not load current config.', 'error');
+        });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var password = document.getElementById('password').value;
+        if (!password) return;
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Saving...';
+
+        var body = {
+          ca: document.getElementById('ca').value,
+          twitter: document.getElementById('twitter').value,
+          community: document.getElementById('community').value,
+          buy: document.getElementById('buy').value
+        };
+
+        fetch('/api/config', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + password
+          },
+          body: JSON.stringify(body)
+        })
+          .then(function (r) {
+            if (!r.ok) throw new Error(r.status === 401 ? 'Invalid password.' : 'Save failed.');
+            return r.json();
+          })
+          .then(function () {
+            showStatus('Config saved successfully.', 'success');
+            document.getElementById('password').value = '';
+          })
+          .catch(function (err) {
+            showStatus(err.message || 'An error occurred.', 'error');
+          })
+          .finally(function () {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Save Config';
+          });
+      });
+
+      function showStatus(msg, type) {
+        status.textContent = msg;
+        status.className = 'status ' + type;
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FROGECOIN — The Prophecy Fulfilled</title>
+  <meta name="description" content="Grok prophesied the next billion-dollar memecoin is a frog. The time has come. FROGECOIN is here.">
+  <meta property="og:title" content="FROGECOIN — The Prophecy Fulfilled">
+  <meta property="og:description" content="The frog chose us. Join the pond.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Fira+Code:wght@400;500&family=Lora:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- VISUAL LAYER — always present, decorative -->
+  <div class="visual-layer" aria-hidden="true">
+    <div class="caustics"></div>
+    <svg class="duckweed" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <defs>
+        <pattern id="duckweed-pattern" x="0" y="0" width="120" height="100" patternUnits="userSpaceOnUse">
+          <ellipse cx="15" cy="20" rx="6" ry="4" fill="#39FF14" opacity="0.5"/>
+          <ellipse cx="70" cy="10" rx="4" ry="3" fill="#39FF14" opacity="0.4"/>
+          <ellipse cx="45" cy="55" rx="5" ry="3.5" fill="#39FF14" opacity="0.45"/>
+          <ellipse cx="100" cy="40" rx="3.5" ry="2.5" fill="#39FF14" opacity="0.35"/>
+          <ellipse cx="25" cy="80" rx="4.5" ry="3" fill="#39FF14" opacity="0.4"/>
+          <ellipse cx="85" cy="75" rx="5.5" ry="3.5" fill="#39FF14" opacity="0.5"/>
+          <ellipse cx="55" cy="90" rx="3" ry="2" fill="#39FF14" opacity="0.3"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#duckweed-pattern)"/>
+    </svg>
+    <div class="bubbles" id="bubbles"></div>
+  </div>
+
+  <!-- FLOATING NAV — lily pad -->
+  <nav class="lily-nav" aria-label="Main navigation">
+    <div class="lily-pad">
+      <span class="lily-icon">&#x1F438;</span>
+      <div class="lily-menu">
+        <button class="lily-link ca-copy" data-config="ca">CA: Loading...</button>
+        <a class="lily-link" data-config="twitter" href="#" target="_blank" rel="noopener">Twitter</a>
+        <a class="lily-link" data-config="community" href="#" target="_blank" rel="noopener">Community</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast" role="status" aria-live="polite">ribbit.</div>
+
+  <main>
+
+    <!-- LAYER 1 — THE DEEP -->
+    <section class="layer layer-1" id="the-deep" aria-label="The Prophecy">
+      <div class="layer-1-content">
+        <span class="prophecy-label prophecy-emerge">THE PROPHECY</span>
+
+        <div class="prophecy-block prophecy-emerge" style="--emerge-delay: 1s">
+          <div class="prophecy-screenshot">
+            <img src="static/prophecy.png" alt="Grok's prophecy: the next billion-dollar crypto memecoin is a frog" class="prophecy-img">
+          </div>
+          <span class="prophecy-attr">— Grok &bull; the oracle has spoken</span>
+        </div>
+
+        <span class="prophecy-cta prophecy-emerge" style="--emerge-delay: 2.5s">THE TIME HAS COME.</span>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <div class="scroll-bubble"></div>
+        <div class="scroll-bubble"></div>
+        <div class="scroll-bubble"></div>
+      </div>
+    </section>
+
+    <!-- LAYER 2 — THE LINEAGE -->
+    <section class="layer layer-2" id="the-lineage" aria-label="The Lineage">
+      <h2 class="section-title reveal">THE ONES WHO CAME BEFORE</h2>
+
+      <div class="timeline">
+        <div class="timeline-line" id="timeline-line"></div>
+
+        <div class="epoch reveal" style="--delay: 0s">
+          <div class="epoch-dot"></div>
+          <div class="epoch-content">
+            <span class="epoch-year">2013</span>
+            <span class="epoch-name">Dogecoin.</span>
+            <span class="epoch-sub">"the dog started it all."</span>
+          </div>
+        </div>
+
+        <div class="epoch reveal" style="--delay: 0.15s">
+          <div class="epoch-dot"></div>
+          <div class="epoch-content">
+            <span class="epoch-year">2021</span>
+            <span class="epoch-name">Doughecoin.</span>
+            <span class="epoch-sub">"the dough rose."</span>
+          </div>
+        </div>
+
+        <div class="epoch reveal" style="--delay: 0.3s">
+          <div class="epoch-dot"></div>
+          <div class="epoch-content">
+            <span class="epoch-year">2024</span>
+            <span class="epoch-name">Goatcoin.</span>
+            <span class="epoch-sub">"the goat was crowned."</span>
+          </div>
+        </div>
+
+        <div class="epoch epoch-final reveal" style="--delay: 0.45s">
+          <div class="epoch-dot epoch-dot-final"></div>
+          <div class="epoch-content">
+            <span class="epoch-year">2025</span>
+            <span class="epoch-name epoch-name-final">FROGECOIN.</span>
+            <span class="epoch-sub epoch-sub-final">"the prophecy fulfilled."</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAYER 3 — THE FROG -->
+    <section class="layer layer-3" id="the-frog" aria-label="The Frog">
+      <div class="layer-3-content">
+        <h1 class="frog-title reveal">FROGE</h1>
+
+        <div class="frog-image-wrap reveal" style="--delay: 0.2s">
+          <img src="static/froge.png" alt="Frogecoin mascot" class="frog-img">
+        </div>
+
+        <p class="frog-quote reveal" style="--delay: 0.4s">
+          "National Frog Day gave us a sign. We built a religion."
+        </p>
+
+        <div class="cta-row reveal" style="--delay: 0.6s">
+          <a class="cta-btn" data-config="buy" href="#">Buy $FROGE</a>
+          <a class="cta-btn" data-config="twitter" href="#" target="_blank" rel="noopener">Twitter</a>
+          <a class="cta-btn" data-config="community" href="#" target="_blank" rel="noopener">Community</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAYER 4 — IT'S EVERYWHERE -->
+    <section class="layer layer-4" id="proof" aria-label="Proof">
+      <h2 class="section-title reveal">IT'S EVERYWHERE</h2>
+      <p class="section-sub reveal" style="--delay: 0.15s">"Instagram. Reddit. Twitter. The frogs are rising."</p>
+
+      <div class="proof-grid">
+        <div class="proof-item reveal" style="--delay: 0.1s"><img src="static/proof/1.png" alt="Proof 1" loading="lazy"></div>
+        <div class="proof-item reveal" style="--delay: 0.15s"><img src="static/proof/2.png" alt="Proof 2" loading="lazy"></div>
+        <div class="proof-item reveal" style="--delay: 0.2s"><img src="static/proof/3.png" alt="Proof 3" loading="lazy"></div>
+        <div class="proof-item reveal" style="--delay: 0.25s"><img src="static/proof/4.png" alt="Proof 4" loading="lazy"></div>
+        <div class="proof-item reveal" style="--delay: 0.3s"><img src="static/proof/5.png" alt="Proof 5" loading="lazy"></div>
+        <div class="proof-item reveal" style="--delay: 0.35s"><img src="static/proof/6.png" alt="Proof 6" loading="lazy"></div>
+        <div class="proof-item reveal" style="--delay: 0.4s"><img src="static/proof/7.png" alt="Proof 7" loading="lazy"></div>
+        <div class="proof-item reveal" style="--delay: 0.45s"><img src="static/proof/8.png" alt="Proof 8" loading="lazy"></div>
+        <div class="proof-item reveal" style="--delay: 0.5s"><img src="static/proof/9.png" alt="Proof 9" loading="lazy"></div>
+        <div class="proof-item reveal" style="--delay: 0.55s"><img src="static/proof/10.png" alt="Proof 10" loading="lazy"></div>
+        <div class="proof-item reveal" style="--delay: 0.6s"><img src="static/proof/11.png" alt="Proof 11" loading="lazy"></div>
+        <div class="proof-item reveal" style="--delay: 0.65s"><img src="static/proof/12.png" alt="Proof 12" loading="lazy"></div>
+      </div>
+    </section>
+
+    <!-- LAYER 5 — THE ARMY -->
+    <section class="layer layer-5" id="the-army" aria-label="The Army">
+      <h2 class="army-title reveal">FROGE ARMY</h2>
+      <span class="army-unite reveal" style="--delay: 0.2s">UNITE.</span>
+
+      <div class="rally-lines">
+        <p class="rally-line rally-left reveal" style="--delay: 0.1s">"We didn't choose the frog. The frog chose us."</p>
+
+        <div class="rally-divider" aria-hidden="true">
+          <svg width="12" height="10" viewBox="0 0 12 10"><path d="M6 0C4 0 2 2 2 4c0 1 .5 2 1.5 2.5C2.5 7.5 1 9 1 9s2.5.5 3.5-.5c.5.3 1 .5 1.5.5s1-.2 1.5-.5C8.5 9.5 11 9 11 9s-1.5-1.5-2.5-2.5C9.5 6 10 5 10 4c0-2-2-4-4-4z" fill="#3A5A3A"/></svg>
+        </div>
+
+        <p class="rally-line rally-right reveal" style="--delay: 0.2s">"Grok said it. The market will confirm it."</p>
+
+        <div class="rally-divider" aria-hidden="true">
+          <svg width="12" height="10" viewBox="0 0 12 10"><path d="M6 0C4 0 2 2 2 4c0 1 .5 2 1.5 2.5C2.5 7.5 1 9 1 9s2.5.5 3.5-.5c.5.3 1 .5 1.5.5s1-.2 1.5-.5C8.5 9.5 11 9 11 9s-1.5-1.5-2.5-2.5C9.5 6 10 5 10 4c0-2-2-4-4-4z" fill="#3A5A3A"/></svg>
+        </div>
+
+        <p class="rally-line rally-left reveal" style="--delay: 0.3s">"Every great coin had doubters. Every great army had deserters."</p>
+
+        <div class="rally-divider" aria-hidden="true">
+          <svg width="12" height="10" viewBox="0 0 12 10"><path d="M6 0C4 0 2 2 2 4c0 1 .5 2 1.5 2.5C2.5 7.5 1 9 1 9s2.5.5 3.5-.5c.5.3 1 .5 1.5.5s1-.2 1.5-.5C8.5 9.5 11 9 11 9s-1.5-1.5-2.5-2.5C9.5 6 10 5 10 4c0-2-2-4-4-4z" fill="#3A5A3A"/></svg>
+        </div>
+
+        <p class="rally-line rally-right reveal" style="--delay: 0.4s">"This is not a meme. This is a movement."</p>
+
+        <div class="rally-divider" aria-hidden="true">
+          <svg width="12" height="10" viewBox="0 0 12 10"><path d="M6 0C4 0 2 2 2 4c0 1 .5 2 1.5 2.5C2.5 7.5 1 9 1 9s2.5.5 3.5-.5c.5.3 1 .5 1.5.5s1-.2 1.5-.5C8.5 9.5 11 9 11 9s-1.5-1.5-2.5-2.5C9.5 6 10 5 10 4c0-2-2-4-4-4z" fill="#3A5A3A"/></svg>
+        </div>
+
+        <p class="rally-line rally-left reveal" style="--delay: 0.5s">"Goat had its run. Dog had its era. This is the age of the frog."</p>
+      </div>
+    </section>
+
+    <!-- LAYER 6 — JOIN THE POND -->
+    <section class="layer layer-6" id="join" aria-label="Join the Pond">
+      <h2 class="section-title reveal">JOIN THE POND</h2>
+
+      <div class="pond-steps">
+        <svg class="pond-path" aria-hidden="true" viewBox="0 0 400 700" preserveAspectRatio="none">
+          <path d="M200 0 Q320 100 200 175 Q80 250 200 350 Q320 450 200 525 Q80 600 200 700" stroke="#39FF14" stroke-width="2" stroke-dasharray="8 8" fill="none" opacity="0.3"/>
+        </svg>
+
+        <div class="pond-step pond-step-1 reveal" style="--delay: 0.1s">
+          <div class="lily-pad-step">
+            <span class="step-num">I</span>
+            <p class="step-text">"Get Phantom. Your lily pad in the swamp."</p>
+          </div>
+        </div>
+
+        <div class="pond-step pond-step-2 reveal" style="--delay: 0.25s">
+          <div class="lily-pad-step">
+            <span class="step-num">II</span>
+            <p class="step-text">"Buy SOL. Fuel for the jump."</p>
+          </div>
+        </div>
+
+        <div class="pond-step pond-step-3 reveal" style="--delay: 0.4s">
+          <div class="lily-pad-step">
+            <span class="step-num">III</span>
+            <p class="step-text">"Swap for $FROGE on pump.fun. You're in the pond."</p>
+          </div>
+        </div>
+
+        <div class="pond-step pond-step-4 reveal" style="--delay: 0.55s">
+          <div class="lily-pad-step">
+            <span class="step-num">IV</span>
+            <p class="step-text">"Hold. Croak. Unite. The prophecy needs believers."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER — THE SURFACE -->
+  <footer class="swamp-footer">
+    <svg class="footer-frog" width="24" height="20" viewBox="0 0 24 20" aria-hidden="true">
+      <path d="M12 0C8 0 4 3 4 7c0 2 1 4 3 5C5 14 2 17 2 17s5 1 7-1c1 .6 2 1 3 1s2-.4 3-1c2 2 7 1 7 1s-3-3-5-5c2-1 3-3 3-5 0-4-4-7-8-7z" fill="#3A5A3A"/>
+    </svg>
+    <p class="footer-prophecy">"the prophecy is live. on-chain."</p>
+    <button class="footer-ca ca-copy" data-config="ca">Loading...</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
