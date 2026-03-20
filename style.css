@@ -332,21 +332,14 @@ a { color: inherit; text-decoration: none; }
 
 .layer-1 {
   background: var(--abyss);
-}
-
-.layer-1-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  max-width: 640px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-banner {
   position: absolute;
   inset: 0;
   z-index: 0;
-  overflow: hidden;
 }
 
 .hero-banner-img {
@@ -354,12 +347,26 @@ a { color: inherit; text-decoration: none; }
   height: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: 0.35;
+  opacity: 0.4;
+}
+
+/* Dark vignette over banner so text stays readable */
+.hero-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(7,15,8,0.3) 0%, rgba(7,15,8,0.85) 100%);
+  pointer-events: none;
 }
 
 .layer-1-content {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 640px;
 }
 
 .prophecy-label {
