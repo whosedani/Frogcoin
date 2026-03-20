@@ -374,16 +374,6 @@ a { color: inherit; text-decoration: none; }
   animation: prophecy-emerge 2s ease-out both;
 }
 
-.hero-frog-wrap {
-  animation: float-y 4s ease-in-out infinite;
-}
-
-.hero-frog {
-  width: clamp(180px, 35vw, 300px);
-  border-radius: 16px;
-  filter: drop-shadow(0 0 30px rgba(57,255,20,0.15));
-}
-
 .hero-ticker {
   font-family: 'Dela Gothic One', sans-serif;
   font-style: normal;
@@ -450,9 +440,6 @@ a { color: inherit; text-decoration: none; }
   max-width: 550px;
   width: 100%;
   margin-bottom: 24px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 0 24px rgba(57,255,20,0.08);
 }
 
 .lore-tagline {
@@ -552,6 +539,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .chat-expand {
+  display: inline-block;
   font-family: 'Fira Code', monospace;
   font-style: normal;
   font-size: 13px;
@@ -563,6 +551,7 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
   transition: background 0.3s, border-color 0.3s, color 0.3s;
   letter-spacing: 1px;
+  text-decoration: none;
 }
 
 .chat-expand:hover {
