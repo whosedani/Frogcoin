@@ -111,7 +111,7 @@
     // CA elements — text content
     document.querySelectorAll('[data-config="ca"]').forEach(function (el) {
       if (el.tagName === 'BUTTON') {
-        el.textContent = config.ca === 'COMING_SOON' ? 'CA: Coming Soon' : 'CA: ' + truncateCA(config.ca);
+        el.textContent = config.ca === 'COMING_SOON' ? 'CA: Coming Soon' : 'CA: ' + config.ca;
         el.dataset.fullCa = config.ca;
       }
     });
