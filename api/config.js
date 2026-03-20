@@ -74,14 +74,14 @@ module.exports = async function handler(req, res) {
 
   // POST — update config (auth required)
   if (req.method === 'POST') {
-    const adminHash = process.env.ADMIN_HASH;
+    const adminHash = (process.env.ADMIN_HASH || '').trim();
     if (!adminHash) {
       return res.status(500).json({ error: 'Admin not configured.' });
     }
 
     // Validate auth
     const authHeader = req.headers.authorization || '';
-    const password = authHeader.replace(/^Bearer\s+/i, '');
+    const password = authHeader.replace(/^Bearer\s+/i, '').trim();
     if (!password || hashPassword(password) !== adminHash) {
       return res.status(401).json({ error: 'Unauthorized.' });
     }
