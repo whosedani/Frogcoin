@@ -53,41 +53,106 @@
 
   <main>
 
-    <!-- LAYER 1 — THE DEEP -->
-    <section class="layer layer-1" id="the-deep" aria-label="The Prophecy">
+    <!-- ========== BLOCK 1 — HERO ========== -->
+    <section class="hero" id="hero" aria-label="Hero">
       <div class="hero-banner">
         <img src="static/froge.png" alt="" class="hero-banner-img">
       </div>
 
-      <div class="layer-1-content">
-        <span class="prophecy-label prophecy-emerge">THE PROPHECY</span>
-
-        <div class="prophecy-block prophecy-emerge" style="--emerge-delay: 1s">
-          <div class="prophecy-embed">
-            <iframe
-              src="https://platform.twitter.com/embed/Tweet.html?id=2013280162344038479&theme=dark&hideCard=false&hideThread=true&width=500"
-              width="500"
-              height="520"
-              frameborder="0"
-              allowfullscreen
-              scrolling="no"
-              style="border: none; border-radius: 12px; max-width: 100%;"
-              title="Grok prophecy tweet by @anndylian"
-            ></iframe>
-          </div>
+      <div class="hero-content">
+        <div class="hero-frog-wrap">
+          <img src="static/froge.png" alt="Frogecoin" class="hero-frog">
         </div>
 
-        <span class="prophecy-cta prophecy-emerge" style="--emerge-delay: 2.5s">FROG. HANDS DOWN.</span>
-      </div>
+        <h1 class="hero-ticker">FROGECOIN</h1>
+        <p class="hero-name">Frogecoin</p>
 
-      <div class="scroll-hint" aria-hidden="true">
-        <div class="scroll-bubble"></div>
-        <div class="scroll-bubble"></div>
-        <div class="scroll-bubble"></div>
+        <button class="hero-ca ca-copy" data-config="ca">Loading...</button>
+
+        <div class="hero-links">
+          <a class="cta-btn" data-config="twitter" href="#" target="_blank" rel="noopener">Twitter</a>
+          <a class="cta-btn" data-config="community" href="#" target="_blank" rel="noopener">Community</a>
+        </div>
       </div>
     </section>
 
-    <!-- LAYER 2 — THE LINEAGE -->
+    <!-- ========== BLOCK 2 — THE LORE ========== -->
+    <section class="layer lore" id="the-lore" aria-label="The Lore">
+      <h2 class="section-title reveal">THE PROPHECY</h2>
+
+      <p class="lore-narrative reveal" style="--delay: 0.15s">
+        Grok was asked a simple question: frog or whale?<br>
+        The oracle didn't hesitate. The answer shook the swamp.
+      </p>
+
+      <div class="prophecy-embed reveal" style="--delay: 0.3s">
+        <iframe
+          src="https://platform.twitter.com/embed/Tweet.html?id=2013280162344038479&theme=dark&hideCard=false&hideThread=true&width=500"
+          width="500"
+          height="520"
+          frameborder="0"
+          allowfullscreen
+          scrolling="no"
+          style="border: none; border-radius: 12px; max-width: 100%;"
+          title="Grok prophecy tweet by @anndylian"
+        ></iframe>
+      </div>
+
+      <span class="lore-tagline reveal" style="--delay: 0.45s">FROG. HANDS DOWN.</span>
+    </section>
+
+    <!-- ========== BLOCK 3 — THE CONVERSATION ========== -->
+    <section class="layer grok-chat" id="the-oracle" aria-label="The Oracle Speaks">
+      <h2 class="section-title reveal">THE ORACLE SPEAKS</h2>
+      <p class="section-sub reveal" style="--delay: 0.1s">"The full prophecy, unfiltered."</p>
+
+      <div class="chat-container reveal" style="--delay: 0.2s">
+
+        <!-- Human message -->
+        <div class="chat-msg chat-human">
+          <div class="chat-avatar">&#x1F464;</div>
+          <div class="chat-bubble">
+            <span class="chat-sender">Anndy Lian</span>
+            <p>Predict this @GROK: Will the next billion-dollar crypto memecoin be a frog or a whale?</p>
+          </div>
+        </div>
+
+        <!-- Grok response -->
+        <div class="chat-msg chat-grok">
+          <div class="chat-avatar">&#x1F916;</div>
+          <div class="chat-bubble">
+            <span class="chat-sender">Grok</span>
+
+            <div class="chat-preview">
+              <p><strong>Frog. Hands down.</strong> The next fresh billion-dollar memecoin is way more likely to be frog-themed than whale-themed.</p>
+              <p>Here's why, based on current vibes, history, and market psychology:</p>
+              <p><strong>Frogs still have the cultural rocket fuel</strong> — Pepe remains the undisputed king of the non-dog meme meta. It's basically the only other animal (besides dogs) that has repeatedly proven it can sustain multi-billion market caps long-term. The frog = good luck / prosperity narrative just refuses to die.</p>
+              <p>Every time someone says "the next big meme won't be a frog," the community immediately starts memeing even harder about frogs. It's become a self-fulfilling prophecy at this point.</p>
+            </div>
+
+            <div class="chat-full" id="chat-full">
+              <p><strong>Whales? Cute, but not billion-dollar launch material (yet)</strong></p>
+              <p>Whale memes tend to be more "status" or "whale-watching" jokes rather than viral, repeatable, emotionally sticky characters. Most whale-themed tokens so far are either pump-and-dump traders bragging, or they get absorbed into hybrid memes. They lack the universal, dumb-simple appeal that frogs mastered.</p>
+              <p>Whales are the market movers, not the memes themselves. People want to become the whale, not worship one on-chain.</p>
+
+              <p><strong>Quick 2026 reality check</strong></p>
+              <p>Dogs still rule the legacy top 5 (DOGE/SHIB/FLOKI/WIF/BONK territory). Cats had their moment but cooled off. Frogs quietly stay in the "next narrative wave" conversation — especially if we get another Matt Furie lore revival or a big Asian market rotation.</p>
+              <p>The most viral "next billion" predictions right now still orbit around frog energy, ironic anti-frog posts, or straight-up "frog cycle still ahead" takes.</p>
+
+              <p><strong>Bold prediction:</strong> The next brand-new memecoin to 10-figure market cap in 2026 will almost certainly feature a smug green amphibian somewhere in the artwork. Whales will be the ones buying the top, not the face of the coin.</p>
+
+              <p>So yeah… <strong>frog gang stays winning.</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="chat-expand" id="chat-expand">Read the full prophecy</button>
+    </section>
+
+    <!-- ========== EXISTING SECTIONS BELOW ========== -->
+
+    <!-- THE LINEAGE -->
     <section class="layer layer-2" id="the-lineage" aria-label="The Lineage">
       <h2 class="section-title reveal">THE ONES WHO CAME BEFORE</h2>
 
@@ -132,28 +197,7 @@
       </div>
     </section>
 
-    <!-- LAYER 3 — THE FROG -->
-    <section class="layer layer-3" id="the-frog" aria-label="The Frog">
-      <div class="layer-3-content">
-        <h1 class="frog-title reveal">FROGE</h1>
-
-        <div class="frog-image-wrap reveal" style="--delay: 0.2s">
-          <img src="static/froge.png" alt="Frogecoin mascot" class="frog-img">
-        </div>
-
-        <p class="frog-quote reveal" style="--delay: 0.4s">
-          "Whales are the market movers, not the memes. The face of the coin is the frog."
-        </p>
-
-        <div class="cta-row reveal" style="--delay: 0.6s">
-          <a class="cta-btn" data-config="buy" href="#">Buy $FROGE</a>
-          <a class="cta-btn" data-config="twitter" href="#" target="_blank" rel="noopener">Twitter</a>
-          <a class="cta-btn" data-config="community" href="#" target="_blank" rel="noopener">Community</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- LAYER 4 — IT'S EVERYWHERE -->
+    <!-- IT'S EVERYWHERE -->
     <section class="layer layer-4" id="proof" aria-label="Proof">
       <h2 class="section-title reveal">IT'S EVERYWHERE</h2>
       <p class="section-sub reveal" style="--delay: 0.15s">"It's become a self-fulfilling prophecy at this point."</p>
@@ -174,7 +218,7 @@
       </div>
     </section>
 
-    <!-- LAYER 5 — THE ARMY -->
+    <!-- THE ARMY -->
     <section class="layer layer-5" id="the-army" aria-label="The Army">
       <h2 class="army-title reveal">FROGE ARMY</h2>
       <span class="army-unite reveal" style="--delay: 0.2s">UNITE.</span>
@@ -208,7 +252,7 @@
       </div>
     </section>
 
-    <!-- LAYER 6 — JOIN THE POND -->
+    <!-- JOIN THE POND -->
     <section class="layer layer-6" id="join" aria-label="Join the Pond">
       <h2 class="section-title reveal">JOIN THE POND</h2>
 

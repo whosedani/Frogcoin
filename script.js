@@ -173,6 +173,20 @@
   }
 
   /* ------------------------------------------
+     CHAT EXPAND/COLLAPSE
+     ------------------------------------------ */
+  function initChatExpand() {
+    var btn = document.getElementById('chat-expand');
+    var full = document.getElementById('chat-full');
+    if (!btn || !full) return;
+
+    btn.addEventListener('click', function () {
+      var isOpen = full.classList.toggle('open');
+      btn.textContent = isOpen ? 'Collapse' : 'Read the full prophecy';
+    });
+  }
+
+  /* ------------------------------------------
      IMAGE ERROR HANDLING — graceful placeholders
      ------------------------------------------ */
   function initImageFallbacks() {
@@ -194,6 +208,7 @@
     initScrollReveal();
     initTimeline();
     initCACopy();
+    initChatExpand();
     initImageFallbacks();
     loadConfig();
   });

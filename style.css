@@ -37,7 +37,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 a { color: inherit; text-decoration: none; }
 
 /* --- FONT UTILITIES --- */
-.font-display, .section-title, .frog-title, .army-title, .army-unite, .prophecy-cta, .epoch-name-final, .step-num {
+.font-display, .section-title, .hero-ticker, .army-title, .army-unite, .lore-tagline, .epoch-name-final, .step-num {
   font-family: 'Dela Gothic One', sans-serif;
   font-style: normal;
 }
@@ -327,13 +327,18 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================
-   LAYER 1 — THE DEEP
+   BLOCK 1 — HERO
    ============================================ */
 
-.layer-1 {
-  background: var(--abyss);
+.hero {
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
+  background: var(--abyss);
+  padding: 60px 24px;
 }
 
 .hero-banner {
@@ -347,100 +352,224 @@ a { color: inherit; text-decoration: none; }
   height: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: 0.4;
+  opacity: 0.35;
 }
 
-/* Dark vignette over banner so text stays readable */
 .hero-banner::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, rgba(7,15,8,0.3) 0%, rgba(7,15,8,0.85) 100%);
+  background: radial-gradient(ellipse at center, rgba(7,15,8,0.2) 0%, rgba(7,15,8,0.9) 100%);
   pointer-events: none;
 }
 
-.layer-1-content {
+.hero-content {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
-  max-width: 640px;
+  gap: 16px;
+  text-align: center;
+  animation: prophecy-emerge 2s ease-out both;
 }
 
-.prophecy-label {
+.hero-frog-wrap {
+  animation: float-y 4s ease-in-out infinite;
+}
+
+.hero-frog {
+  width: clamp(180px, 35vw, 300px);
+  border-radius: 16px;
+  filter: drop-shadow(0 0 30px rgba(57,255,20,0.15));
+}
+
+.hero-ticker {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-style: normal;
+  font-size: clamp(48px, 12vw, 120px);
+  color: var(--neon);
+  text-shadow: 0 0 40px rgba(57,255,20,0.4), 0 0 80px rgba(57,255,20,0.15);
+  line-height: 1;
+  letter-spacing: 4px;
+}
+
+.hero-name {
+  font-size: clamp(16px, 3vw, 22px);
+  color: var(--text);
+  opacity: 0.7;
+  margin-top: -8px;
+}
+
+.hero-ca {
+  font-family: 'Fira Code', monospace;
+  font-style: normal;
   font-size: 12px;
   color: var(--moss);
-  letter-spacing: 4px;
-  text-transform: uppercase;
+  padding: 10px 24px;
+  border: 1px solid rgba(57,255,20,0.15);
+  border-radius: 8px;
+  background: rgba(57,255,20,0.04);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  word-break: break-all;
+  max-width: 400px;
+  cursor: pointer;
+  margin-top: 8px;
 }
 
-.prophecy-emerge {
-  animation: prophecy-emerge 3s ease-out both;
-  animation-delay: var(--emerge-delay, 0s);
+.hero-ca:hover {
+  color: var(--neon);
+  border-color: var(--neon);
+  background: var(--neon-10);
 }
 
-.prophecy-block {
-  border-left: 2px solid var(--neon);
-  padding-left: 24px;
-  background: rgba(57,255,20,0.03);
-  border-radius: 0 8px 8px 0;
-  padding: 20px 24px;
+.hero-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+/* ============================================
+   BLOCK 2 — THE LORE
+   ============================================ */
+
+.lore {
+  background: var(--deep);
+}
+
+.lore-narrative {
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: var(--text);
+  text-align: center;
+  max-width: 580px;
+  line-height: 1.7;
+  margin-bottom: 32px;
 }
 
 .prophecy-embed {
   max-width: 550px;
   width: 100%;
-  margin-bottom: 12px;
-  border-radius: 8px;
+  margin-bottom: 24px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(57,255,20,0.08);
+  box-shadow: 0 0 24px rgba(57,255,20,0.08);
 }
 
-.prophecy-embed .twitter-tweet {
-  margin: 0 !important;
-}
-
-/* Hide tweet while loading to avoid flash */
-.prophecy-embed twitter-widget {
-  border-radius: 8px !important;
-  border: 1px solid rgba(57,255,20,0.1) !important;
-}
-
-.prophecy-attr {
-  font-size: 11px;
-  color: var(--moss);
-  display: block;
-  margin-top: 8px;
-}
-
-.prophecy-cta {
-  font-size: 14px;
+.lore-tagline {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-style: normal;
+  font-size: clamp(14px, 2.5vw, 18px);
   color: var(--neon);
   letter-spacing: 8px;
   text-transform: uppercase;
 }
 
-/* Scroll hint bubbles */
-.scroll-hint {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 12px;
+/* ============================================
+   BLOCK 3 — GROK CHAT
+   ============================================ */
+
+.grok-chat {
+  background: var(--abyss);
 }
 
-.scroll-bubble {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--neon-30);
-  animation: scroll-hint-bubble 2s ease-out infinite;
+.chat-container {
+  max-width: 640px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 24px;
 }
-.scroll-bubble:nth-child(2) { animation-delay: 0.4s; }
-.scroll-bubble:nth-child(3) { animation-delay: 0.8s; }
+
+.chat-msg {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.chat-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.05);
+}
+
+.chat-bubble {
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 100%;
+}
+
+.chat-bubble p {
+  margin-bottom: 10px;
+}
+
+.chat-bubble p:last-child {
+  margin-bottom: 0;
+}
+
+.chat-sender {
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+  opacity: 0.5;
+}
+
+.chat-human .chat-bubble {
+  background: rgba(57,255,20,0.06);
+  border: 1px solid rgba(57,255,20,0.1);
+  border-radius: 12px 12px 12px 0;
+  color: var(--text);
+}
+
+.chat-grok .chat-bubble {
+  background: rgba(123,45,142,0.08);
+  border: 1px solid rgba(123,45,142,0.15);
+  border-radius: 12px 12px 0 12px;
+  color: var(--text);
+}
+
+.chat-full {
+  display: none;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(123,45,142,0.15);
+}
+
+.chat-full.open {
+  display: block;
+}
+
+.chat-expand {
+  font-family: 'Fira Code', monospace;
+  font-style: normal;
+  font-size: 13px;
+  padding: 12px 28px;
+  border: 1px solid var(--neon-30);
+  border-radius: 8px;
+  color: var(--text);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+  letter-spacing: 1px;
+}
+
+.chat-expand:hover {
+  background: var(--neon-10);
+  border-color: var(--neon);
+  color: var(--neon);
+}
 
 /* ============================================
    LAYER 2 — THE LINEAGE
@@ -549,71 +678,6 @@ a { color: inherit; text-decoration: none; }
 
 .epoch-sub-final {
   color: var(--violet);
-}
-
-/* ============================================
-   LAYER 3 — THE FROG
-   ============================================ */
-
-.layer-3 {
-  background: linear-gradient(to top, var(--deep), #142A18);
-}
-
-.layer-3-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  text-align: center;
-}
-
-.frog-title {
-  font-size: clamp(72px, 15vw, 200px);
-  color: var(--neon);
-  text-shadow: 0 0 40px rgba(57,255,20,0.4), 0 0 80px rgba(57,255,20,0.15);
-  line-height: 1;
-  letter-spacing: 4px;
-}
-
-.frog-image-wrap {
-  position: relative;
-  animation: float-y 4s ease-in-out infinite;
-}
-
-.frog-img {
-  width: clamp(240px, 40vw, 380px);
-  position: relative;
-  z-index: 1;
-}
-
-/* Placeholder when image missing */
-.frog-img:not([complete]) {
-  min-height: 300px;
-  background: linear-gradient(135deg, rgba(57,255,20,0.08), rgba(57,255,20,0.02));
-  border-radius: 50%;
-}
-
-/* Water reflection */
-.frog-image-wrap::after {
-  content: '';
-  position: absolute;
-  bottom: -40%;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background: inherit;
-  transform: scaleY(-1);
-  opacity: 0.12;
-  filter: blur(4px);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent 70%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent 70%);
-  pointer-events: none;
-}
-
-.frog-quote {
-  font-size: clamp(15px, 2.5vw, 18px);
-  color: var(--text);
-  max-width: 460px;
 }
 
 .cta-row {
