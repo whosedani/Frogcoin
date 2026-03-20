@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "frogecoin-dev",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-l", "3000", "-s", "."],
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["node_modules/serve/build/main.js", "-l", "3000", "-s", "."],
       "port": 3000
     }
   ]

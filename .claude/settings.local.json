@@ -3,7 +3,19 @@
     "allow": [
       "mcp__Claude_Preview__preview_start",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh api:*)",
+      "Bash(git config:*)",
+      "Bash(gh repo:*)",
+      "Bash(npx vercel:*)",
+      "Bash(vercel --yes)",
+      "Bash(vercel --yes --name frogecoin)",
+      "Bash(node -e \"console.log\\(process.execPath\\)\")",
+      "Bash(npx serve:*)",
+      "Bash(git push:*)",
+      "Bash(npm install:*)",
+      "Bash(ls /c/Users/User/Desktop/Websites/Frogcoin/static/favicon*)"
     ]
   }
 }
